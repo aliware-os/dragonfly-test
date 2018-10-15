@@ -1,5 +1,10 @@
-Dfdaemon CLI Manual
 ---
+title: "Dfdaemon CLI Manual"
+date: 2018-10-15T15:32:47+08:00
+draft: true
+---
+
+
 
 ## NAME
 
