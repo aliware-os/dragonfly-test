@@ -1,0 +1,152 @@
+/*
+ * Copyright 1999-2018 Alibaba Group.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package api
+
+import (
+	"fmt"
+	"strings"
+
+	"github.com/alibaba/Dragonfly/dfget/config"
+	"github.com/alibaba/Dragonfly/dfget/types"
+	"github.com/go-check/check"
+)
+
+type SupernodeAPITestSuite struct {
+	mock *mockHTTPClient
+	api  SupernodeAPI
+}
+
+func (s *SupernodeAPITestSuite) SetUpSuite(c *check.C) {
+	s.mock = &mockHTTPClient{}
+	s.api = NewSupernodeAPI()
+	s.api.(*supernodeAPI).HTTPClient = s.mock
+}
+
+func (s *SupernodeAPITestSuite) TearDownTest(c *check.C) {
+	s.mock.reset()
+}
+
+func init() {
+	check.Suite(&SupernodeAPITestSuite{})
+}
+
+// ----------------------------------------------------------------------------
+// unit tests for SupernodeAPI
+
+func (s *SupernodeAPITestSuite) TestSupernodeAPI_Register(c *check.C) {
+	ip := "127.0.0.1"
+
+	s.mock.postJSON = s.mock.createPostJSONFunc(0, nil, nil)
+	r, e := s.api.Register(ip, createRegisterRequest())
+	c.Assert(r, check.IsNil)
+	c.Assert(e.Error(), check.Equals, "0:")
+
+	s.mock.postJSON = s.mock.createPostJSONFunc(0, nil,
+		fmt.Errorf("test"))
+	r, e = s.api.Register(ip, createRegisterRequest())
+	c.Assert(r, check.IsNil)
+	c.Assert(e.Error(), check.Equals, "test")
+
+	res := types.RegisterResponse{BaseResponse: &types.BaseResponse{}}
+	s.mock.postJSON = s.mock.createPostJSONFunc(200, []byte(res.String()), nil)
+	r, e = s.api.Register(ip, createRegisterRequest())
+	c.Assert(r, check.NotNil)
+	c.Assert(r.Code, check.Equals, 0)
+
+	res.Code = config.Success
+	res.Data = &types.RegisterResponseData{FileLength: int64(32)}
+	s.mock.postJSON = s.mock.createPostJSONFunc(200, []byte(res.String()), nil)
+	r, e = s.api.Register(ip, createRegisterRequest())
+	c.Assert(r, check.NotNil)
+	c.Assert(r.Code, check.Equals, config.Success)
+	c.Assert(r.Data.FileLength, check.Equals, res.Data.FileLength)
+}
+
+func (s *SupernodeAPITestSuite) TestSupernodeAPI_PullPieceTask(c *check.C) {
+	ip := "127.0.0.1"
+
+	res := &types.PullPieceTaskResponse{BaseResponse: &types.BaseResponse{}}
+	res.Code = config.TaskCodeFinish
+	res.Data = []byte(`{"fileLength":2}`)
+	s.mock.get = s.mock.createGetFunc(200, []byte(res.String()), nil)
+
+	r, e := s.api.PullPieceTask(ip, nil)
+
+	c.Assert(e, check.IsNil)
+	c.Assert(r.Code, check.Equals, res.Code)
+	c.Assert(r.FinishData().FileLength, check.Equals, int64(2))
+}
+
+func (s *SupernodeAPITestSuite) TestSupernodeAPI_ReportPiece(c *check.C) {
+	ip := "127.0.0.1"
+
+	s.mock.get = s.mock.createGetFunc(200, []byte(`{"Code":700}`), nil)
+	r, e := s.api.ReportPiece(ip, nil)
+	c.Check(e, check.IsNil)
+	c.Check(r.Code, check.Equals, 700)
+}
+
+func (s *SupernodeAPITestSuite) TestSupernodeAPI_ServiceDown(c *check.C) {
+	ip := "127.0.0.1"
+
+	s.mock.get = s.mock.createGetFunc(200, []byte(`{"Code":200}`), nil)
+	r, e := s.api.ServiceDown(ip, "", "")
+	c.Check(e, check.IsNil)
+	c.Check(r.Code, check.Equals, 200)
+}
+
+func (s *SupernodeAPITestSuite) TestSupernodeAPI_get(c *check.C) {
+	type testRes struct {
+		A int
+	}
+
+	api := s.api.(*supernodeAPI)
+	f := func(code int, res string, e error) (*testRes, error, string) {
+		s.mock.get = s.mock.createGetFunc(code, []byte(res), e)
+		msg := fmt.Sprintf("code:%d res:%s e:%v", code, res, e)
+		resp := new(testRes)
+		err := api.get("http://localhost", resp)
+		return resp, err, msg
+	}
+
+	r, e, m := f(0, "test", nil)
+	c.Assert(r.A, check.Equals, 0, check.Commentf(m))
+	c.Assert(e.Error(), check.Equals, "0:test", check.Commentf(m))
+
+	r, e, m = f(0, "x", fmt.Errorf("test error"))
+	c.Assert(e.Error(), check.Equals, "test error", check.Commentf(m))
+
+	r, e, m = f(200, "x", nil)
+	c.Assert(r.A, check.Equals, 0, check.Commentf(m))
+	c.Assert(strings.Contains(e.Error(), "invalid character"),
+		check.Equals, true, check.Commentf(m))
+
+	r, e, m = f(200, `{"A":1}`, nil)
+	c.Assert(r.A, check.Equals, 1, check.Commentf(m))
+	c.Assert(e, check.IsNil, check.Commentf(m))
+
+	e = api.get("", nil)
+	c.Assert(e.Error(), check.Equals, "invalid url")
+}
+
+// ----------------------------------------------------------------------------
+// helper functions
+
+func createRegisterRequest() (req *types.RegisterRequest) {
+	req = &types.RegisterRequest{}
+	return req
+}

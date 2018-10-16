@@ -1,0 +1,133 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "OED5RsS1Us385a/VH6IAlSl0xHo=",
+			"path": "github.com/go-check/check",
+			"revision": "20d25e2804050c1cd24a7eea1e7a6447dd0e74ec",
+			"revisionTime": "2016-12-08T18:13:25Z"
+		},
+		{
+			"checksumSHA1": "5BFhwYqOy2dR2NwDe3cCauuxEYM=",
+			"path": "github.com/klauspost/compress/flate",
+			"revision": "b939724e787a27c0005cabe3f78e7ed7987ac74f",
+			"revisionTime": "2018-07-08T15:37:41Z"
+		},
+		{
+			"checksumSHA1": "kWBC7CTgppTdJFXizt4XkURbyCE=",
+			"path": "github.com/klauspost/compress/gzip",
+			"revision": "b939724e787a27c0005cabe3f78e7ed7987ac74f",
+			"revisionTime": "2018-07-08T15:37:41Z"
+		},
+		{
+			"checksumSHA1": "KQ77MI2l4iDQE0Z/DiDeO0S963o=",
+			"path": "github.com/klauspost/compress/zlib",
+			"revision": "b939724e787a27c0005cabe3f78e7ed7987ac74f",
+			"revisionTime": "2018-07-08T15:37:41Z"
+		},
+		{
+			"checksumSHA1": "xEHEfywV/9zZ/nPy/PJBF6xVn1o=",
+			"path": "github.com/klauspost/cpuid",
+			"revision": "e7e905edc00ea8827e58662220139109efea09db",
+			"revisionTime": "2018-04-05T13:32:22Z"
+		},
+		{
+			"checksumSHA1": "As1PSFJop3xi3W8tAYSm/8YesAQ=",
+			"path": "github.com/pborman/uuid",
+			"revision": "c65b2f87fee37d1c7854c9164a450713c28d50cd",
+			"revisionTime": "2018-01-22T19:00:07Z"
+		},
+		{
+			"checksumSHA1": "IU0RLDrXScjlsTwNWAKQLLsLoc0=",
+			"path": "github.com/sirupsen/logrus",
+			"revision": "92052687f8ec598ff0da626d2909478cfd1e3a3c",
+			"revisionTime": "2018-07-12T20:16:18Z"
+		},
+		{
+			"checksumSHA1": "OJI0OgC5V8gZtfS1e0CDYMhkDNc=",
+			"path": "github.com/spf13/pflag",
+			"revision": "3ebe029320b2676d667ae88da602a5f854788a8a",
+			"revisionTime": "2018-06-01T13:25:42Z"
+		},
+		{
+			"checksumSHA1": "LTOa3BADhwvT0wFCknPueQALm8I=",
+			"path": "github.com/valyala/bytebufferpool",
+			"revision": "e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7",
+			"revisionTime": "2016-08-17T18:16:52Z"
+		},
+		{
+			"checksumSHA1": "eq08pJz4K+i3qiS39A7ENDBMoF0=",
+			"path": "github.com/valyala/fasthttp",
+			"revision": "e5f51c11919d4f66400334047b897ef0a94c6f3c",
+			"revisionTime": "2017-12-07T12:09:41Z"
+		},
+		{
+			"checksumSHA1": "nFdyJk6jdHzVNgEMdjDuWMk4z5o=",
+			"path": "github.com/valyala/fasthttp/fasthttputil",
+			"revision": "e5f51c11919d4f66400334047b897ef0a94c6f3c",
+			"revisionTime": "2017-12-07T12:09:41Z"
+		},
+		{
+			"checksumSHA1": "YXXy4b1yOQx/iL3Icv6svTmcGss=",
+			"path": "github.com/valyala/fasthttp/stackless",
+			"revision": "e5f51c11919d4f66400334047b897ef0a94c6f3c",
+			"revisionTime": "2017-12-07T12:09:41Z"
+		},
+		{
+			"checksumSHA1": "BGm8lKZmvJbf/YOJLeL1rw2WVjA=",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": "a49355c7e3f8fe157a85be2f77e6e269a0f89602",
+			"revisionTime": "2018-06-20T09:14:27Z"
+		},
+		{
+			"checksumSHA1": "fwb6FNBUs0SOyUpUx5R31Xf22GY=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "d8f5ea21b9295e315e612b4bcf4bedea93454d4d",
+			"revisionTime": "2017-08-03T09:04:06Z"
+		},
+		{
+			"checksumSHA1": "P8Y8GFwxybTfltfh8Q0lHqlEYIM=",
+			"path": "golang.org/x/sys/windows",
+			"revision": "ac767d655b305d4e9612f5f6e33120b9176c4ad4",
+			"revisionTime": "2018-07-08T03:57:06Z"
+		},
+		{
+			"checksumSHA1": "N/AMbVzEuShvKz2WXrdwwMWylik=",
+			"path": "gopkg.in/gcfg.v1",
+			"revision": "61b2c08bc8f6068f7c5ca684372f9a6cb1c45ebe",
+			"revisionTime": "2018-05-17T20:24:47Z"
+		},
+		{
+			"checksumSHA1": "CYxB+G1UgkqEOFCEb90ObVPczMA=",
+			"path": "gopkg.in/gcfg.v1/scanner",
+			"revision": "61b2c08bc8f6068f7c5ca684372f9a6cb1c45ebe",
+			"revisionTime": "2018-05-17T20:24:47Z"
+		},
+		{
+			"checksumSHA1": "9agO8MliOVQGjMcOIV7g7LPHeFY=",
+			"path": "gopkg.in/gcfg.v1/token",
+			"revision": "61b2c08bc8f6068f7c5ca684372f9a6cb1c45ebe",
+			"revisionTime": "2018-05-17T20:24:47Z"
+		},
+		{
+			"checksumSHA1": "A2FpDz2muvMPC91Ec63wmUPfxFE=",
+			"path": "gopkg.in/gcfg.v1/types",
+			"revision": "61b2c08bc8f6068f7c5ca684372f9a6cb1c45ebe",
+			"revisionTime": "2018-05-17T20:24:47Z"
+		},
+		{
+			"checksumSHA1": "I4c3qsEX8KAUTeB9+2pwVX/2ojU=",
+			"path": "gopkg.in/warnings.v0",
+			"revision": "ec4a0fea49c7b46c2aeb0b51aac55779c607e52b",
+			"revisionTime": "2017-11-15T19:30:34Z"
+		},
+		{
+			"checksumSHA1": "ZSWoOPUNRr5+3dhkLK3C4cZAQPk=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "5420a8b6744d3b0345ab293f6fcba19c978f1183",
+			"revisionTime": "2018-03-28T19:50:20Z"
+		}
+	],
+	"rootPath": "github.com/alibaba/Dragonfly"
+}
