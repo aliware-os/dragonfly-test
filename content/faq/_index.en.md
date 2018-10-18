@@ -1,7 +1,7 @@
 +++
 title = "FAQ"
 weight = 6
-chapter = true
+chapter = false
 pre = "<b>6. </b>"
 +++
 

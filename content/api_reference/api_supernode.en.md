@@ -1,7 +1,7 @@
-___
+---
 title: "APIs Provided by Supernode"
 weight: 1
-___
+---
 
 This section describes APIs that is provided by the supernode, aka cluster manager.
 

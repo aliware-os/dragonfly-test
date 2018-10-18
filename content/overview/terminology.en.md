@@ -1,5 +1,6 @@
 ---
 title: "Terminology"
+weight: 2
 ---
 
 ## SuperNode

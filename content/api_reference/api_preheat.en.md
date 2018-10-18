@@ -1,7 +1,7 @@
-___
+---
 title: "Preheating API"
 weight: 2
-___
+---
 
 ## GET /api/check
 
