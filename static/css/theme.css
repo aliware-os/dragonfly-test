@@ -326,7 +326,6 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #body img {
     margin: 3rem auto;
     display: block
-    //display: inline;
     text-align: center;
 }
 #body .video-container {
