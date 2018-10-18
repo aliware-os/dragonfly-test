@@ -1,7 +1,6 @@
 +++
 title = "Quick Start"
-weight = 2
-chapter = false
+weight = 20
 pre = "<b>2. </b>"
 +++
 

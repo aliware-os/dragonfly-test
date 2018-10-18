@@ -1,7 +1,6 @@
 +++
 title = "Before Starting"
-weight = 0
-chapter = false
+weight = 1
 pre = "<b>0. </b>"
 +++
 
