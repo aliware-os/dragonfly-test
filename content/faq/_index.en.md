@@ -5,10 +5,6 @@ chapter = false
 pre = "<b>6. </b>"
 +++
 
-### Chapter 6
-
-# FAQ
-
 ## How can I pull images by Dragonfly
 
 See [Use Dragonfly to Pull an Image](docs/en/quick_start.md#use-dragonfly-to-pull-an-image)

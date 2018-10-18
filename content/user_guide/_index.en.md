@@ -10,3 +10,5 @@ pre = "<b>3. </b>"
 # User Guide
 
 Understand how to use Dragonfly from installing the server and client to distributing files.
+
+{{% children style="h2" depth="3" description="true" %}}

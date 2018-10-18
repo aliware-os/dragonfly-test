@@ -10,3 +10,5 @@ pre = "<b>4. </b>"
 # CLI Reference
 
 Understand the details of CLI commands.
+
+{{% children style="h2" depth="3" description="true" %}}

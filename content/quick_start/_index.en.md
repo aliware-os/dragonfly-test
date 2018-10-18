@@ -5,10 +5,6 @@ chapter = false
 pre = "<b>2. </b>"
 +++
 
-### Chapter 2
-
-# Quick Start
-
 The latest release version is 0.2.0, you can quickly experience Dragonfly in the following simple steps.
 
 ## Start SuperNode on Docker Container

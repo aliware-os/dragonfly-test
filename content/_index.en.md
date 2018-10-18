@@ -7,7 +7,7 @@ title: "Dragonfly"
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falibaba%2FDragonfly.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falibaba%2FDragonfly?ref=badge_shield)
 [![Build Status](https://travis-ci.org/alibaba/Dragonfly.svg?branch=master)](https://travis-ci.org/alibaba/Dragonfly)
 
-![Dragonfly](./logo.png)
+![Dragonfly](../images/logo.png)
 
 ## What is Dragonfly?
 
