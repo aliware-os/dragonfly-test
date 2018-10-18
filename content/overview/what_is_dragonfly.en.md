@@ -1,13 +1,6 @@
 ---
-title: "Dragonfly"
+title = "What Is Dragonfly"
 ---
-
-[![Join the chat at https://gitter.im/alibaba/Dragonfly](https://badges.gitter.im/alibaba/Dragonfly.svg)](https://gitter.im/alibaba/Dragonfly?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![License](https://img.shields.io/badge/license-Apache%202-brightgreen.svg)](https://github.com/alibaba/Dragonfly/blob/master/LICENSE)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falibaba%2FDragonfly.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falibaba%2FDragonfly?ref=badge_shield)
-[![Build Status](https://travis-ci.org/alibaba/Dragonfly.svg?branch=master)](https://travis-ci.org/alibaba/Dragonfly)
-
-![Dragonfly](./logo.png)
 
 ## What is Dragonfly?
 
@@ -55,29 +48,24 @@ processing requests with extremely high performance.
 For Dragonfly, no matter how many clients issue the file downloading, the average downloading time is always around 12 seconds.
 And for wget, the downloading time keeps increasing when you have more clients, and as the amount of wget clients reaches 1200, the file source will crash, then it can not serve any client.
 
-## Who has adopted Dragonfly?
+## How does it work?
 
-Below are the adoptors of project Dragonfly. If you are using to Dragonfly to improve your distribution, please contact us with.
+### Distributing General Files
 
-<a href="https://www.alibabagroup.com" border="0" target="_blank"><img alt="trendmicro" src="../images/adoptor_logo/AlibabaGroup.jpg" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
-<a href="https://www.alibabacloud.com/zh" border="0" target="_blank"><img alt="trendmicro" src="../images/adoptor_logo/AlibabaCloud.png" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
-<a href="http://www.10086.cn/" border="0" target="_blank"><img alt="OnStar" src="../images/adoptor_logo/ChinaMobile.png" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
-<a href="https://www.antfin.com/" border="0" target="_blank"><img alt="OnStar" src="../images/adoptor_logo/AntFinancial.png" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
-<a href="https://www.cainiao.com/" border="0" target="_blank"><img alt="OnStar" src="../images/adoptor_logo/CaiNiao.gif" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
-<a href="http://www.iflytek.com/" border="0" target="_blank"><img alt="OnStar" src="../images/adoptor_logo/iFLYTEK.jpeg" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
-<a href="https://www.didiglobal.com" border="0" target="_blank"><img alt="OnStar" src="../images/adoptor_logo/didi.png" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
-<a href="https://www.meituan.com" border="0" target="_blank"><img alt="OnStar" src="../images/adoptor_logo/meituan.png" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
-<a href="https://www.amap.com/" border="0" target="_blank"><img alt="OnStar" src="../images/adoptor_logo/amap.png" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
-<a href="https://www.lazada.com/" border="0" target="_blank"><img alt="OnStar" src="../images/adoptor_logo/lazada.png" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
+![Distributing General Files](../images/dfget.png)
 
-## License
+The cluster manager is also called supernode, which is responsible for CDN and scheduling every peer to transfer blocks between them. dfget is the client of P2P, also called 'peer',which is mainly used to download and share blocks. 
 
-Dragonfly is available under the [Apache 2.0 License](https://github.com/alibaba/Dragonfly/blob/master/LICENSE).
+### Distributing Container Images
 
-## Commercial Support
+![Distributing Container Images](../images/dfget-combine-container.png)
 
-If you need commercial support of Dragonfly, please contact us for more information: [云效](https://www.aliyun.com/product/yunxiao).
+Registry is similar to the file server above. dfget proxy is also called dfdaemon, which intercepts http-requests from docker pull or docker push,and then determines which requests need use dfget to handle.
 
-Dragonfly is already integrated with AliCloud Container Services
-If you need commercial support of AliCloud Container Service, please contact us for more information: [Container Service
-](https://www.alibabacloud.com/product/container-service)
+### How file blocks are downloaded
+
+![How file blocks are downloaded](../images/distributing.png)
+
+Every File is divided into multiple blocks, which are transmitted between peers,one peer is one P2P client.
+Cluster manager will judge whether the corresponding file exists in the local disk, if not, 
+it will be downloaded into cluster manager from file server.

@@ -1,6 +1,6 @@
 ---
 title: "Installing Server"
-date: 2018-10-15T15:32:47+08:00
+weight: 1
 ---
 
 This guide provides instructions for developers to build and run cluster manager (supernode) from source code. 

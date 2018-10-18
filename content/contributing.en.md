@@ -1,8 +1,8 @@
 ---
-title: "Contributing to Dragonfly"
-date: 2018-10-15T15:32:47+08:00
-draft: true
+title: "Contributing"
 ---
+
+# Contributing to Dragonfly
 
 It is warmly welcomed if you have interest to hack on Dragonfly. First, we encourage this kind of willing very much. And here is a list of contributing guide for you.
 
@@ -80,7 +80,7 @@ git remote add upstream https://github.com/alibaba/Dragonfly.git
 git remote set-url --push upstream no-pushing
 ```
 
-With this remote setting, you can check you git remote configuration like this:
+With this remote setting, you can check your git remote configuration like this:
 ```
 $ git remote -v
 origin     https://github.com/<your-username>/Dragonfly.git (fetch)
