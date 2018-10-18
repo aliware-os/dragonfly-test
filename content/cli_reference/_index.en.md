@@ -1,6 +1,6 @@
 +++
 title = "CLI Reference"
-weight = 4
+weight = 40
 pre = "<b>4. </b>"
 +++
 
