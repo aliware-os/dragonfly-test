@@ -1,7 +1,6 @@
 +++
 title = "用户指南"
 weight = 30
-chapter = true
 pre = "<b>3. </b>"
 +++
 

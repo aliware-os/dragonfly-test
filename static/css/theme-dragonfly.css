@@ -13,9 +13,7 @@ body {
     font-family: "Work Sans", "Helvetica", "source-han-sans-simplified-c", "Tahoma", "Geneva", "Arial", sans-serif;
     font-weight: 300;
     line-height: 1.6;
-/*    font-size: 18px !important;*/
-    font-size: 28px !important;
-	color: brown;
+    font-size: 18px !important;
 }
 h2, h3, h4, h5, h6 {
     font-family: "Work Sans", "Helvetica", "source-han-sans-simplified-c", "Tahoma", "Geneva", "Arial", sans-serif;
@@ -45,6 +43,10 @@ h1 {
 
 :root{
   
-    --MENU-HEADER-BG-color:#cccccc; /* Background color of menu header */
+    --MENU-HEADER-BG-color:#172345; /* Background color of menu header */
 
+}
+
+#sidebar #header-wrapper {
+    background: var(--MENU-HEADER-BG-color);
 }
