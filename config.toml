@@ -1,6 +1,7 @@
 baseURL = "http://aliware-os.github.io/dragonfly-test"
 languageCode = "en-US"
 defaultContentLanguage = "en"
+hasCJKLanguage = true
 
 title = "DragonFly Documentation"
 theme = "hugo-theme-learn-master"

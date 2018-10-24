@@ -1,5 +1,6 @@
 #body img {
-    margin: 3rem auto;
+/*    margin: 3rem auto;*/
+    margin: auto;
     display: inline;
     text-align: center;
 }
@@ -12,7 +13,8 @@ body {
     font-family: "Work Sans", "Helvetica", "source-han-sans-simplified-c", "Tahoma", "Geneva", "Arial", sans-serif;
     font-weight: 300;
     line-height: 1.6;
-    font-size: 18px !important;
+/*    font-size: 18px !important;*/
+    font-size: 28px !important;
 	color: brown;
 }
 h2, h3, h4, h5, h6 {
