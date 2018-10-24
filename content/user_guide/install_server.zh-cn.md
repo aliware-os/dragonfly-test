@@ -86,7 +86,7 @@ Nginx|0.8+
     ```
 5. 在 Nginx 配置文件中添加以下配置。
 
-    {{% notice tip %}}Nginx 配置文件路径例如 _src/supernode/src/main/docker/sources/nginx.conf_。{{% /notice %}}
+    **提示：**Nginx 配置文件路径例如 `src/supernode/src/main/docker/sources/nginx.conf`。
 
     ```
     server {

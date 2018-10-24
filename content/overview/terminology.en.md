@@ -3,6 +3,8 @@ title: "Terminology"
 weight: 2
 ---
 
+This topic lists the common terms used throughout Dragonfly.
+
 ## SuperNode
 
 SuperNode is a long-time process with two primary responsibilities:

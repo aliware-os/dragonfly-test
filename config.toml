@@ -15,7 +15,7 @@ defaultContentLanguageInSubdir= true
   showVisitedLinks = true
   disableBreadcrumb = true
   disableNextPrev = true
-  themeVariant = "blue"
+  themeVariant = "dragonfly"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
@@ -38,7 +38,7 @@ url = "roadmap"
 weight = 2
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> Contributing"
+name = "<i class='fas fa-fw fa-camera'></i> Contributing Guide"
 url = "contributing"
 weight = 3
 
@@ -70,7 +70,7 @@ url = "roadmap"
 weight = 2
 
 [[Languages.zh-cn.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> 贡献"
+name = "<i class='fas fa-fw fa-camera'></i> 贡献指南"
 url = "contributing"
 weight = 3
 
