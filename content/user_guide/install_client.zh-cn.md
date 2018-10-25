@@ -1,5 +1,5 @@
 ---
-title: "Install Client"
+title: "安装客户端"
 weight: 5
 ---
 

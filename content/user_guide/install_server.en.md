@@ -4,6 +4,7 @@ weight: 1
 ---
 
 This guide provides instructions for developers to build and run cluster manager (supernode) from source code. 
+<!--more-->
 
 {{% notice tip %}}
 The recommended deployment for the cluster manager is that at least two machines with at least 8-core 16G and best to provide Gigabit Ethernet.

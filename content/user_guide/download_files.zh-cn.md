@@ -1,5 +1,5 @@
 ---
-title: "Distribuiting Files"
+title: "分发文件"
 weight: 10
 ---
 

@@ -1,5 +1,5 @@
 +++
-title = "Quick Start"
+title = "快速入门"
 weight = 20
 pre = "<b>2. </b>"
 +++

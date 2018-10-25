@@ -1,5 +1,5 @@
 ---
-title: "Contributing Guide"
+title: "贡献指南"
 ---
 
 It is warmly welcomed if you have interest to hack on Dragonfly. First, we encourage this kind of willing very much. And here is a list of contributing guide for you.

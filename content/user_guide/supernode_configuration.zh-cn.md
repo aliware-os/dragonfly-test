@@ -1,7 +1,10 @@
 ---
-title: "SuperNode Configuration"
-weight: 4
+title: "超级节点的配置"
+weight: 15
 ---
+
+This topic explains the configuration of SuperNode.
+<!--more-->
 
 ## Properties
 

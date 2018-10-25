@@ -1,5 +1,5 @@
 ---
-title: "Terminology"
+title: "术语"
 weight: 5
 ---
 
