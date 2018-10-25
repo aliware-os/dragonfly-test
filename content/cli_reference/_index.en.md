@@ -6,4 +6,4 @@ pre = "<b>4. </b>"
 
 Understand the details of CLI commands.
 
-{{% children style="h2" depth="3" description="true" %}}
+{{% children style="h3" depth="3" description="true" %}}

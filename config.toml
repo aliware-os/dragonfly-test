@@ -34,25 +34,19 @@ url = "https://github.com/alibaba/Dragonfly"
 weight = 1
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> Roadmap"
+name = "<i class='fas fa-fw fa-map-signs'></i> Roadmap"
 url = "roadmap"
 weight = 2
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> Contributing Guide"
+name = "<i class='fas fa-fw fa-lightbulb'></i> Contributing Guide"
 url = "contributing"
 weight = 3
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> Maintainers"
+name = "<i class='fas fa-fw fa-user-cog'></i> Maintainers"
 url = "maintainers"
 weight = 4
-
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-bookmark'></i> Hugo Documentation"
-identifier = "hugodoc"
-url = "https://gohugo.io/"
-weight = 5
 
 [Languages.zh-cn]
 title = "Dragonfly 文档"
@@ -66,22 +60,16 @@ url = "https://github.com/alibaba/Dragonfly"
 weight = 1
 
 [[Languages.zh-cn.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> 路线图"
+name = "<i class='fas fa-fw fa-map-signs'></i> 路线图"
 url = "roadmap"
 weight = 2
 
 [[Languages.zh-cn.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> 贡献指南"
+name = "<i class='fas fa-fw fa-lightbulb'></i> 贡献指南"
 url = "contributing"
 weight = 3
 
 [[Languages.zh-cn.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> 维护者"
+name = "<i class='fas fa-fw fa-user-cog'></i> 维护者"
 url = "maintainers"
 weight = 4
-
-[[Languages.zh-cn.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-bookmark'></i> Hugo 官方文档"
-identifier = "hugodoc"
-url = "https://gohugo.io/"
-weight = 5

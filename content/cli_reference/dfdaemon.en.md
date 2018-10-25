@@ -1,5 +1,5 @@
 ---
-title: "Using dfdaemon command"
+title: "dfdaemon"
 weight: 1
 ---
 

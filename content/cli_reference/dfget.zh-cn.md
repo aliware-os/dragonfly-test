@@ -1,5 +1,5 @@
 ---
-title: "使用 dfget 命令"
+title: "dfget"
 weight: 5
 ---
 

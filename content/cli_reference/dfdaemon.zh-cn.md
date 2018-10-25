@@ -1,5 +1,5 @@
 ---
-title: "使用 dfdaemon 命令"
+title: "dfdaemon"
 weight: 1
 ---
 

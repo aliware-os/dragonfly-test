@@ -6,4 +6,4 @@ pre = "<b>3. </b>"
 
 了解如何使用 Dragonfly，包括安装服务端、安装客户端、分发文件等。
 
-{{% children style="h2" depth="3" description="true" %}}
+{{% children style="h3" depth="3" description="true" %}}
