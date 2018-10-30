@@ -4,14 +4,14 @@ weight = 20
 pre = "<b>2. </b>"
 +++
 
-Simply by starting a SuperNode in your Docker container, and installing the Dragonfly client, you can start downloading with Dragonfly.
+Simply by starting a supernode in your Docker container, and installing the Dragonfly client, you can start downloading with Dragonfly.
 <!--more-->
 
 ## Prerequisites
 
 You have started your Docker container.
 
-## Starting a SuperNode in Your Docker Container
+## Starting a supernode in Your Docker Container
 
 1. Pull the docker image we provided.
 
@@ -19,7 +19,7 @@ You have started your Docker container.
     # Replace ${imageName} with the real image name
     docker pull ${imageName}
     ```
-2. Start a SuperNode.
+2. Start a supernode.
 
     ```bash
     # Replace ${imageName} with the real image name
@@ -89,7 +89,7 @@ dfget -u 'https://github.com/alibaba/Dragonfly/blob/master/docs/images/logo.png'
 ```
 
 {{% notice tip %}}
-For more information on the dfget command, see {{< ref "/cli_reference/dfget" >}}.
+For more information on the dfget command, see [dfget]({{< ref "dfget.md" >}}).
 {{% /notice %}}
 
 ## Pulling an Image with Dragonfly
@@ -110,7 +110,7 @@ For more information on the dfget command, see {{< ref "/cli_reference/dfget" >}
     systemctl restart docker
     ```
 	
-4.  Pull an image with Dragonfly.
+4.  Download an image with Dragonfly.
 
     ```bash
     docker pull nginx:latest
@@ -118,5 +118,8 @@ For more information on the dfget command, see {{< ref "/cli_reference/dfget" >}
 	
 ## Related Topics
 
-- {{< ref "install_server.md" >}}
-- {{< ref "install_client.md" >}}
+- [Installing Server]({{< ref "install_server.md" >}})
+- [Installing Client]({{< ref "install_client.md" >}})
+- [Downloading Files]({{< ref "download_files.md" >}})
+- [supernode Configuration]({{< ref "supernode_configuration.md" >}})
+- [dfget]({{< ref "dfget.md" >}})

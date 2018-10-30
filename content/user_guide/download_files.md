@@ -1,65 +1,129 @@
 ---
-title: "Distribuiting Files"
+title: "Downloading Files"
 weight: 10
 ---
 
-# File Distribution
-
-This topic explains how to distribute files with Dragonfly.
+Things are done differently when you download container images and download general files with Dragonfly.
 <!--more-->
 
-## Requirements
+## Prerequisites
 
-1.on linux host
+- You are using Linux operating system.
+- You have installed Python 2.7+, and added the Python directory to the `PATH` environment variable.
+- The supernode service is started.
 
-2.need python 2.7 and make sure it's in the environment variable named PATH.
+    {{% notice tip %}} For more information on the installation of supernodes, see [Installing Server]({{< ref "install_server.md" >}}).
+    {{% /notice %}}
 
-## Step By Step
+## Downloading container images
 
-### Configuration
+1. Specify the supernodes.
 
-specify cluster manager nodes by configuration file or by cmd param *cluster manager nodes is deployed [above](https://github.com/alibaba/Dragonfly/blob/master/docs/install_clustermanager.md)*
+    a. Open the Dragonfly configuration file.
 
-*nodeIp is cluster manager ip*
+    ```sh
+    vi /etc/dragonfly.conf
+	```
+	
+	b. Add the IP of supernodes separated by comma to the configuration file.
 
-by configuration file for distributing container images or general files `vi /etc/dragonfly.conf` and add or update cluster manager nodes as follows:
+    ```sh
+    [node]
+    address=nodeIp1,nodeIp2
+    ```
 
-```
-[node]
-address=nodeIp1,nodeIp2,...
-```
+2. Start the dfget proxy (dfdaemon).
 
-by cmd param only for distributing general files *cmd param will cover items in configuration file*.
+    ```sh
+    # Start dfdaemon and specify the image repo URL. The default port is `65001`.
+    dfdaemon --registry https://xxx.xx.x
+	
+	# Review dfdaemon logs
+    tailf ~/.small-dragonfly/logs/dfdaemon.log
+    ```
+	
+	{{% notice tip %}} To list all available parameters for dfdaemon, run `dfdeaemon -h`.
+    {{% /notice %}}
 
-you must apply this param named --node every time the dfget is executed,<br/> for example `dfget -u "http://xxx.xx.x" --node nodeIp1,nodeIp2,...`
+3. Configure the Daemon Mirror.
 
-2.configure container daemon
+	a. Modify the configuration file `/etc/docker/daemon.json`.
 
-*please ignore this step if you only distribute general files with dragonfly.*
+    ```sh
+    vi /etc/docker/daemon.json
+	```
+	
+	{{% notice tip %}} For more information on `/etc/docker/daemon.json`, see [Docker documentation](https://docs.docker.com/registry/recipes/mirror/#configure-the-cache).
+    {{% /notice %}}
 
-start dfget proxy
 
-A. you can execute `dfdaemon -h` to show help info
+    b. Add or update the configuration item `registry-mirrors` in the configuration file.
 
-B. the simplest way:  `dfdaemon --registry https://xxx.xx.x` or `dfdaemon --registry http://xxx.xx.x` , "xxx.xx.x" is the domain of registry
+    ```sh
+    "registry-mirrors": ["http://127.0.0.1:65001"]
+	```
 
-C. dfdaemon's log info in ~/.small-dragonfly/logs/dfdaemon.log
+    c. Restart Docker daemon.
 
-configure daemon mirror
+    ```bash
+    systemctl restart docker
+    ```
 
-*standard method of configuring daemon mirror for docker*
+4.  Download an image with Dragonfly.
 
-A. `vi /etc/docker/daemon.json`, please refer to [official document](https://docs.docker.com/registry/recipes/mirror/#configure-the-cache)
+    ```bash
+    docker pull {imageName}
+    ```
+	{{% notice note %}} Don't include the image repo URL in {imageName}, because the repo URL has been specified with the `registry` parameter when starting dfdaemon.
+    {{% /notice %}}
 
-B. add or update the item: `"registry-mirrors": ["http://127.0.0.1:65001"]`,65001 is default port of dfget-proxy
+## Downloading General Files
 
-C. restart docker `systemctl restart docker`
+1. Specify the supernodes in one of the following ways.
 
-### Run
+    - Specifying with the configuration file.
 
-To distribute general files, you can execute `dfget -h` to show help info. the simplest way: `dfget --url "http://xxx.xx.x"`. dfget' log info in ~/.small-dragonfly/logs/dfclient.log
+        ```sh
+        # Open the Dragonfly configuration file.
+        vi /etc/dragonfly.conf
 
-To distribute docker images, execute `docker pull xxx/xx` as usual to download images.
+	    # Add the IP of supernodes separated by comma to the configuration file
+        [node]
+        address=nodeIp1,nodeIp2
+        ```
+	
+	- Specifying with the parameter in the command line.
 
-> Note: "xxx/xx" is the path of image addr and can not contain registry domain that was configured in dfdaemon
-`dfdaemon --registry xxxxxx`
+        ```sh
+        dfget -u "http://www.taobao.com" -o /tmp/test.html --node nodeIp1,nodeIp2
+        ```
+		
+		{{% notice note %}} When using this method, you must add the `node` parameter every time when you run the dfget command. And the parameter in the command line takes precedence over the configuration file.
+        {{% /notice %}}
+
+2.  Download general files with Dragonfly in one of the following ways.
+
+    - Download files with the default `/etc/dragonfly.conf` configuration.
+	
+	    ```sh
+        dfget --url "http://xxx.xx.x"
+        ```
+		
+		{{% notice tip %}} To list all available parameters for dfget, run `dfget -h`.
+	    {{% /notice %}}
+	
+	- Download files with your specified supernodes.
+	
+	    ```sh
+        dfget --url "http://xxx.xx.x" --node "127.0.0.1"
+        ```
+	- Download files to your specified output file.
+	
+	    ```sh
+        dfget --url "http://xxx.xx.x" -o a.txt
+        ```
+	
+## After this Task
+
+To review the downloading log, run `less ~/.small-dragonfly/logs/dfclient.log`.
+
