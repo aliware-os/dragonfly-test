@@ -1,8 +1,10 @@
 +++
-title = "如何使用本网站"
+title = "Before Starting"
 weight = 1
 pre = "<b>0. </b>"
 +++
+
+# Onboarding
 
 Before getting started, let's take a quick look at how to use this documentation portal of Dragonfly.
 
@@ -30,10 +32,10 @@ Some topics can be lengthy. To jump to a specific section, do the following:
 
 1. Hover-over the mini TOC icon in the breadcrumb.
 
-    ![](../../images/bt_mini_toc_en.png)
+    ![](../images/bt_mini_toc_en.png)
 2. In the mini TOC overlay, click a section heading.
 
-    ![](../../images/sc_mini_toc_en.png)  
+    ![](../images/sc_mini_toc_en.png)
 
 ### Navigating to other related resources
 
@@ -43,19 +45,11 @@ To navigate to other related resources, such as the Dragonfly roadmap, github re
 
 Given that the Dragonfly documentation portal is a static website, you can find target information in a blink of an eye.
 
-To perform a search, type your key words in the search box on the top of the left-side navigation pane, and matching results will appear in the overlay. 
+To perform a search, type your key words in the search box on the top of the left-side navigation pane, and matching results will appear in the overlay.
 
-![](../../images/f_search_box_en.png)
+![](../images/f_search_box_en.png)
 
 In the search results, click any link to jump to the topic, and your key words will be highlighted in yellow.
-
-## Switching display language
-
-The Dragonfly documentation portal is a multi-language website.
-
-To switch the display language, in the left-side navigation pane, select a language in the language drop-down list.
-
-![](../../images/f_language_switch_en.png)
 
 ## Improving the documentation
 
