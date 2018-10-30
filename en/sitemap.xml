@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/api_reference/api_supernode/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/onboarding/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/user_guide/install_server/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/overview/what_is_dragonfly/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/cli_reference/dfdaemon/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/user_guide/install_client/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/api_reference/api_preheat/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/overview/terminology/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/cli_reference/dfget/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/user_guide/download_files/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/user_guide/supernode_configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/quick_start/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/user_guide/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/cli_reference/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/api_reference/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://aliware-os.github.io/dragonfly-test/zh-cn/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://aliware-os.github.io/dragonfly-test/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/contributing/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/code_of_conduct/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://aliware-os.github.io/dragonfly-test/zh-cn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://aliware-os.github.io/dragonfly-test/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/maintainers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/roadmap/</loc>
+  </url>
+  
+  <url>
+    <loc>http://aliware-os.github.io/dragonfly-test/en/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://aliware-os.github.io/dragonfly-test/zh-cn/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://aliware-os.github.io/dragonfly-test/en/tags/"
+                />
+  </url>
+  
+</urlset>
